@@ -12,13 +12,15 @@
 	$sql4 = "SELECT * FROM `product_webapp` WHERE types = 'Bedding' OR topic LIKE '%ชุดห้องนอน%'";
 	$sql5 = "SELECT * FROM `product_webapp` WHERE topic LIKE '%ตู้%' ";
 	$sql6 = "SELECT * FROM `product_webapp` WHERE types LIKE 'Travel_Equipment' ";
-	
+	$sql7 = "SELECT * FROM `product_webapp` WHERE types LIKE 'office' ";
+
     $result1 = $connect->query($sql1);	
     $result2 = $connect->query($sql2);
 	$result3 = $connect->query($sql3);
 	$result4 = $connect->query($sql4);
 	$result5 = $connect->query($sql5);
 	$result6 = $connect->query($sql6);
+	$result7 = $connect->query($sql7);
 
 ?>
 <!DOCTYPE html>
@@ -383,6 +385,7 @@
 					</div>
 				</div>																		
 			   <?php endwhile ?>
+
 			<!--decoration-->
 			   <?php while($row = $result3->fetch_assoc()): ?>			
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item decoration" >
@@ -488,6 +491,40 @@
 			    <!--travel-equipment-->
 				<?php while($row = $result6->fetch_assoc()): ?>			
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item travel-equipment" >
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14 ">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<?php echo $row['topic']; ?>
+								</a>
+
+								<span class="stext-105 cl3">
+								<?php echo $row['price']; ?> Baht
+								</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>																		
+			   <?php endwhile ?>
+
+			   	<!--office-->
+				<?php while($row = $result7->fetch_assoc()): ?>			
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item office" >
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
