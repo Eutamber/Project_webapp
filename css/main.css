@@ -33,6 +33,11 @@ Title           : 18px/1.6 '', Arial, sans-serif;
 Paragrap        : 18px/1.6 '', Arial, sans-serif;
 Input, textarea : 14px/1.6 '', Arial, sans-serif;
 -------------------------------------------------------------------*/
+/* log.css */
+/* ... สไตล์ของคุณ ... */
+
+/* เพิ่มบรรทัดนี้เพื่อระบุประเภท MIME */
+/*# sourceMappingURL=log.css.map */
 
 
 
@@ -113,7 +118,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Slick2 ]*/
 .slick-slide {outline: none !important;}
 
-
+/* 
 html,
 body {
   height: 100%;
@@ -126,11 +131,7 @@ body {
 
 .form-signin .form-floating:focus-within {
   z-index: 2;
-}
-
-
-
-
+} */
 
 /*//////////////////////////////////////////////////////////////////
 [ LOADDING ]*/
