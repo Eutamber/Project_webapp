@@ -13,7 +13,7 @@ function debug_to_console($data) {
 
     $errors = array();
 
-    debug_to_console($_POST['reg_user']);
+    // debug_to_console($_POST['reg_user']);
 
     if (isset($_POST['reg_user'])){
 

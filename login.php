@@ -13,10 +13,21 @@
   <!-- <nav>
         <a href="#"><img src="images/logo.svg" alt="logo"></a>
     </nav> -->
-  <form action="regis_db.php">
+  <form action="login_db.php" method="post">
+      <form action="#">
+      <?php if (isset($_SESSION['error'])) : ?>
+      <div class="error">
+        <h3>
+          <?php
+          echo $_SESSION['error'];
+          unset($_SESSION['error']);
+          ?>
+
+        </h3>
+      </div>
+    <?php endif ?>
     <div class="form-wrapper">
       <h2>Login</h2>
-      <form action="#">
         <div class="form-control">
           <input type="text" name="username" required>
           <label for="username">Username</label>

@@ -1,4 +1,4 @@
-<? include('server.php') ?>
+<? include('server.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +14,7 @@
         <a href="#"><img src="images/logo.svg" alt="logo"></a>
     </nav> -->
   <form action="regis_db.php" method="post">
+    <? include('errors.php'); ?>
     <div class="form-wrapper">
       <h2>Register</h2>
       <form action="#">
@@ -34,8 +35,8 @@
           <label for="password_2">Confirm Password</label>
         </div>
         <button type="submit" name="reg_user" value="1">Register</button>
-        <p>Already a member? <a href="login.php">Sign in</a></p> 
-      </form>     
+        <p>Already a member? <a href="login.php">Sign in</a></p>
+      </form>
     </div>
   </form>
 </body>
