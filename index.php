@@ -5,9 +5,15 @@
     if ($connect->connect_error) {
         die("Something wrong.: " . $connect->connect_error);
       }
-
-    $sql = "SELECT * FROM product_webapp";
+	  $id = "";
+	if(isset($_GET["id"])){
+		$id = $_GET["id"];
+	}
+	
+    $sql = "SELECT * FROM product_webapp WHERE ID = $id";
     $result = $connect->query($sql);
+	
+	
 ?>
 
 <!DOCTYPE html>
