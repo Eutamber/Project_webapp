@@ -7,12 +7,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/logincss.css">
+ 
 </head>
 
 <body>
-  <!-- <nav>
-        <a href="#"><img src="images/logo.svg" alt="logo"></a>
-    </nav> -->
+<nav>
+        <a href="#"><img src="images/logoo.svg" alt="logoo"></a>
+    </nav>
   <form action="login_db.php" method="post">
       <form action="#">
       <?php if (isset($_SESSION['error'])) : ?>

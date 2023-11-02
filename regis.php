@@ -10,9 +10,9 @@
 </head>
 
 <body>
-  <!-- <nav>
-        <a href="#"><img src="images/logo.svg" alt="logo"></a>
-    </nav> -->
+<nav>
+        <a href="#"><img src="images/logoo.svg" alt="logoo"></a>
+    </nav>
   <form action="regis_db.php" method="post">
     <? include('errors.php'); ?>
     <div class="form-wrapper">
