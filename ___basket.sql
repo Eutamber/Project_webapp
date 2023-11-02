@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 27, 2023 at 02:46 PM
--- Server version: 8.0.17
--- PHP Version: 7.3.10
+-- Host: 127.0.0.1
+-- Generation Time: Nov 02, 2023 at 08:29 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,12 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ฺbasket` (
   `ID` int(11) NOT NULL,
-  `ID_product` int(11) NOT NULL,
-  `types` varchar(255) NOT NULL,
+  `imge` varchar(255) NOT NULL,
   `topic` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `color` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=tis620;
+) ENGINE=InnoDB DEFAULT CHARSET=tis620 COLLATE=tis620_thai_ci;
+
+--
+-- Dumping data for table `ฺbasket`
+--
+
+INSERT INTO `ฺbasket` (`ID`, `imge`, `topic`, `price`, `quantity`, `color`) VALUES
+(100, 'https://www.indexlivingmall.com/_next/image?url=https%3A%2F%2Fmedia.indexlivingmall.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F29b3f741dcafc528943c644b5c704259%2F1%2F2%2F120025303_1695107648891PNPO.jpg&w=1200&q=75', 'ชุดห้องนอน รุ่นร็อตเตอร์ดัม', 19000, 1, NULL),
+(111, 'https://www.indexlivingmall.com/_next/image?url=https%3A%2F%2Fmedia.indexlivingmall.com%2Fmedia%2Fcatalog%2Fproduct%2F4%2F5%2F4504_fur_23001245_33332_bf.jpg&w=1200&q=75', 'ซื้อชุดห้องนอน รุ่นอิลลูชั่น พลัส ขนาด 6 ฟุต', 46000, 1, NULL);
 
 --
 -- Indexes for dumped tables
