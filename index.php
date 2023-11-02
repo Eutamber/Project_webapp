@@ -4,13 +4,9 @@
 
     if ($connect->connect_error) {
         die("Something wrong.: " . $connect->connect_error);
-      }
-	
-	
+      }	
     $sql = "SELECT * FROM product_webapp";
     $result = $connect->query($sql);
-	
-	
 ?>
 
 <!DOCTYPE html>
@@ -92,8 +88,8 @@
 							</li>
 
 							<li>
-								<a href="shoping-cart.html">Cart</a>
-							</li>
+								<a href="shoping-cart.php">Cart</a>
+							</li>      
 
 							<li>
 								<a href="contact.html">Contact</a>
@@ -239,11 +235,11 @@
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+						<a href="shoping-cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
 							View Cart
 						</a>
 
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+						<a href="shoping-cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
 							Check Out
 						</a>
 					</div>
@@ -584,7 +580,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
 
-							<a href="product-detail.php" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-detail.php?id=<?php echo $row['id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								 View
 							</a>
 						</div>
@@ -599,7 +595,7 @@
 								   Bath							
 								</span>							
 							</div>
-
+							
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
 									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">

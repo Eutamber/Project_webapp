@@ -5,6 +5,7 @@
     if ($connect->connect_error) {
         die("Something wrong.: " . $connect->connect_error);
       }
+	  
 
     $sql1 = "SELECT * FROM product_webapp";
 	$sql2 = "SELECT * FROM `product_webapp` WHERE topic LIKE '%ชุดโต๊ะอาหาร%' ";
@@ -324,7 +325,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
 
-							<a href="product-detail.php" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-detail.php?id=<?php echo $row['id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								View
 							</a>
 						</div>
@@ -360,7 +361,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
 
-							<a href="product-detail.php" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-detail.php?id=<?php echo $row['id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								View
 							</a>
 						</div>
@@ -394,7 +395,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
 
-							<a href="product-detail.php" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-detail.php?id=<?php echo $row['id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								View
 							</a>
 						</div>
@@ -428,7 +429,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
 
-							<a href="product-detail.php" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-detail.php?id=<?php echo $row['id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								View
 							</a>
 						</div>
@@ -462,7 +463,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
 
-							<a href="product-detail.php" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-detail.php?id=<?php echo $row['id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								View
 							</a>
 						</div>
@@ -496,7 +497,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
 
-							<a href="product-detail.php" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-detail.php?id=<?php echo $row['id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								View
 							</a>
 						</div>
@@ -530,7 +531,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $row['imge']; ?>" alt="IMG-PRODUCT">
 
-							<a href="product-detail.php" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="product-detail.php?id=<?php echo $row['id'];?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								View
 							</a>
 						</div>
