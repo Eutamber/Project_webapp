@@ -35,13 +35,13 @@ if ($result->num_rows > 0) {
 
            
             </div>
-            <p><i class="fas fa-plane" style="color: rgb(112, 156, 239);"></i></p>
+            
             <h2>Checkout</h2>
             <h3>Delivery time will not exceed 7 working days.</h3>
             <form>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" class="button-51" id="name" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" class="button-51" required>
                 </div>                
                 <h3>After transferring, the company will check the balance and then deliver the items.</h3>
             </div>

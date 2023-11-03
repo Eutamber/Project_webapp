@@ -1,9 +1,14 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
+    
     margin: 0;
     margin-top: 50px;
     padding: 0;
+    font-size: 120%;
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/posters-in-cozy-apartment-interior-royalty-free-image-943910360-1534189931.jpg");
+    background-size: cover; /* หรือใช้ "contain" แทนถ้าคุณต้องการให้รูปภาพปรับขนาดเพื่อพอดีกับจอจริง */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .checkout-container {
@@ -124,3 +129,17 @@ body {
     display: flex;
     justify-content: center;
 }
+
+/* CSS */
+.button-51 {
+  background-color: transparent;
+  box-sizing: border-box;
+  color: #00132C;
+
+}
+textarea{
+    background-color: transparent;
+    box-sizing: border-box;
+    color: #00132C;
+}
+

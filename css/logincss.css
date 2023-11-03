@@ -1,13 +1,14 @@
+body {    
+    font-size: 120%;
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/posters-in-cozy-apartment-interior-royalty-free-image-943910360-1534189931.jpg");
+    background-size: cover; /* หรือใช้ "contain" แทนถ้าคุณต้องการให้รูปภาพปรับขนาดเพื่อพอดีกับจอจริง */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 * {
     margin: 0;
     padding: 0;
 }
-
-body {
-    font-size: 120%;
-    background: #f8f8f8;
-}
-
 .header {
     width: 30%;
     margin: 50px auto 0px;
@@ -93,3 +94,15 @@ form {
     width: 100%;
     background: #ccc;
 }
+img {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    height: 65%;
+    margin-right: 55px;
+    max-width: 100px;
+    max-height: 100px;
+  }

@@ -11,9 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" type="text/css" href="css/logincss.css">
+    
 </head>
 <body>
-    
+	<a href="#" >
+		<img src="images/logoo.svg" alt="IMG-LOGO">
+	</a>					
+				
     <div class="header">
         <h2>Login</h2>
     </div>

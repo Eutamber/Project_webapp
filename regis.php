@@ -12,7 +12,9 @@
     <link rel="stylesheet" type="text/css" href="css/logincss.css">
 </head>
 <body>
-    
+    <a href="#" >
+		<img src="images/logoo.svg" alt="IMG-LOGO">
+	</a>
     <div class="header">
         <h2>Register</h2>
     </div>
