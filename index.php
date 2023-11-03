@@ -1,11 +1,35 @@
+<?php 
+    session_start();
+
+    if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }
+
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header('location: login.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="css/logincss.css">
+</head>
+</html>
+<!DOCTYPE html>
+<html lang="en">
 	<title>Home</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+	<link rel="icon" type="image/png" href="images/favicon.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -31,8 +55,12 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
 <!--===============================================================================================-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!--===============================================================================================-->
+
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/logincss.css">
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -46,16 +74,9 @@
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar"></div>
 
-					<div class="right-top-bar flex-w h-full">
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
-						</a>
-
-					</div>
+				
 				</div>
 			</div>
-
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop container">
 					
@@ -94,11 +115,14 @@
 
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							<i class="zmdi zmdi-shopping-cart"></i>
+						</div>	
+							<?php if (isset($_SESSION['username'])) : ?>
+					<p style="padding: 0 20px">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+					<p><a href="index.php?logout='1'" style="color: red; text-align: right; padding: 0 5px">Logout</a></p>
+				<?php endif ?>
 						</div>
 
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-							<i class="zmdi zmdi-favorite-outline"></i>
-						</a>
+						
 					</div>
 				</nav>
 			</div>	
@@ -117,13 +141,11 @@
 					<i class="zmdi zmdi-search"></i>
 				</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+				<div class="">
 					<i class="zmdi zmdi-shopping-cart"></i>
 				</div>
 
-				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-					<i class="zmdi zmdi-favorite-outline"></i>
-				</a>
+				
 			</div>
 
 			<!-- Button show menu -->
@@ -1337,7 +1359,7 @@
 
 </body>
 </html>
-<?php
+<!-- <?php
     $servername="localhost";
     $username="root";
     $password="";
@@ -1345,18 +1367,5 @@
     if(!$conn){
         die("connection failed".mysqli_connect_error());
     }
-    echo "connection successfully";
 ?>
-
-<?php
-    session_start();
-    if (!isset($_SESSION['username'])){
-        $_SESSION['msg'] = "You must log in first";
-        header('location: login.php');
-    }
-    if (isset($_GET['logout'])){
-        session_destroy();
-        unset($_SESSION['username']);
-        header('location: login.php');
-    }
-?>
+ -->
