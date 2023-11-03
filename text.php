@@ -1,17 +1,46 @@
-<?php 
-$connect = new mysqli('localhost', 'root', '', 'database_webapp');
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $idcart = $_POST["num-product"];
+    $imge = $_POST["imge"];
+    $topic = $_POST["topic"];
+    $quantity = $_POST["quantity"];
+    $color = $_POST["color"];
 
-if ($connect->connect_error) {
-    die("Something wrong: " . $connect->connect_error);
+    // เชื่อมต่อกับฐานข้อมูล
+    $connect = new mysqli('localhost', 'root', '', 'database_webapp');
+
+    $id = "";
+    if(isset($_GET["id"])){
+        $id = $_GET["id"];
+    }
+    
+    $sql = "SELECT * FROM product_webapp WHERE id = $id";
+    $result = $connect->query($sql);
+    
+    if ($connect->connect_error) {
+        die("Something wrong: " . $connect->connect_error);
+    }
+
+    // ตรวจสอบความถูกต้องของข้อมูลและป้องกัน SQL Injection
+    $idcart = $connect->real_escape_string($idcart);
+    $imge = $connect->real_escape_string($imge);
+    $topic = $connect->real_escape_string($topic);
+    $quantity = $connect->real_escape_string($quantity);
+    $color = $connect->real_escape_string($color);
+
+    // สร้างคำสั่ง SQL สำหรับการ INSERT
+    $query = "INSERT INTO `ฺbasket` (id, imge, topic, quantity, color) VALUES ('$idcart', '$imge', '$topic', '$quantity', '$color')";
+
+    // ทำการ query INSERT
+    if ($connect->query($query) === TRUE) {
+        echo "เรียบร้อย";
+    } else {
+        echo "มีข้อผิดพลาด: " . $connect->error;
+    }
+
+    // ปิดการเชื่อมต่อกับฐานข้อมูล
+    $connect->close();
 }
-
-
-
-$sql = "SELECT * FROM product_webapp WHERE id = $id";
-$result = $connect->query($sql);
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -52,28 +81,31 @@ $result = $connect->query($sql);
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
-<div class="flex-w flex-r-m p-b-10">
-									<div class="size-204 flex-w flex-m respon6-next">
-										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
+    <div class="flex-w flex-r-m p-b-10">
+        <div class="size-204 flex-w flex-m respon6-next">
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+			<div class="wrap-num-product flex-w m-r-20 m-tb-10">
+				<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+					<i class="fs-16 zmdi zmdi-minus"></i>
+				</div>                
+				<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1" >
+                       
+				<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+					<i class="fs-16 zmdi zmdi-plus"></i>
+				</div>
+			   </div>
+                  <input name="num-product" >
+                  <input name="imge">
+                 <input name="topic">
+                 <input name="quantity">
+                <input name="color">
 
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1" >
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
-
-										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+				<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit">
 											Add to cart
 										</button>
-									</div>
-								</div>	
-
-
-
+				</div>
+			</div>
+    </form>
 
 
 <!--===============================================================================================-->	
@@ -179,4 +211,5 @@ $result = $connect->query($sql);
 	<script src="js/main.js"></script>
 
 </body>
+
 </html>

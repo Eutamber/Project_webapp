@@ -271,31 +271,33 @@ $result = $connect->query($sql);
 	
 	<!-- Product Detail -->
 	<section class="sec-product-detail bg0 p-t-65 p-b-60">
+	<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	<?php while($row = $result->fetch_assoc()): ?>		
 		<div class="container">		
 			<div class="row">
 			<!-- //// -->
+			
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
 						<div class="wrap-slick3 flex-sb flex-w">							
 							<div class="slick3 gallery-lb">
 								<div class="item-slick3">
 									<div class="wrap-pic-w pos-relative">
-										<img src="<?php echo $row['imge']; ?>">
+										<input><img src="<?php echo $row['imge']; ?>" name="imge"></input>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-					
+				
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
-						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+						<h4 class="mtext-105 cl2 js-name-detail p-b-14" name="topic">
 						    <?php echo $row['topic']; ?>
 						</h4>
 
-						<span class="mtext-106 cl2">
+						<span class="mtext-106 cl2" name="quantity">
 							<?php echo $row['price']; ?>
 								   Bath					
 						</span>
@@ -351,7 +353,8 @@ $result = $connect->query($sql);
 				</div>
 			</div>			
 		</div>
-		<?php endwhile ?>		
+		<?php endwhile ?>
+	</form>		
 	</section>
 		
 	<!-- Footer -->
@@ -463,6 +466,30 @@ $result = $connect->query($sql);
 						</div>
 					</form>
 				</div>
+			</div>
+
+			<div class="p-t-40">
+				<!-- <div class="flex-c-m flex-w p-b-18">
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+					</a>
+				</div> -->
 			</div>
 		</div>
 	</footer>
