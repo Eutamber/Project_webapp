@@ -3,8 +3,6 @@ include('setlogin.php');
 include('server.php');
     $sql = "SELECT * FROM product_webapp";
     $result = $connect->query($sql);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +51,9 @@ include('server.php');
 			
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop container">
+				<a href="#" class="logo">
+						<img src="images/logoo.svg" alt="IMG-LOGO">
+				</a>
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
@@ -69,134 +70,53 @@ include('server.php');
 								<a href="shoping-cart.php">Cart</a>
 							</li> 
 						</ul>
-					</div>	
+					</div>
 
 					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
-						</div>
-
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart">
-							<i class="zmdi zmdi-shopping-cart"></i>
-						</div>
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+					<div class="wrap-icon-header flex-w flex-r-m">	
 						<?php if (isset($_SESSION['username'])) : ?>
-						<p style="padding: 0 20px">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-						<p><a href="index.php?logout='1'" style="color: red; text-align: right; padding: 0 5px">Logout</a></p>
+						<p style="padding: 0 20px">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>						
 						<?php endif ?>
-						</div>
+						<p><a href="index.php?logout='1'" style="color: red; text-align: right; padding: 0 5px">Logout</a></p>					
 					</div>
 				</nav>
 			</div>	
 		</div>
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop container">
+				<a href="#" class="logo">
+						<img src="images/logoo.svg" alt="IMG-LOGO">
+				</a>
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li class="active-menu">
+								<a href="index.php">Home</a>
+								
+							</li>
 
-		
+							<li>
+								<a href="product.php">Shop</a>
+							</li>
 
-
-		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
-				</button>
-
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
-	</header>
-
-	<!-- Cart -->
-	<div class="wrap-header-cart js-panel-cart">
-		<div class="s-full js-hide-cart"></div>
-
-		<div class="header-cart flex-col-l p-l-65 p-r-25">
-			<div class="header-cart-title flex-w flex-sb-m p-b-8">
-				<span class="mtext-103 cl2">
-					Your Cart
-				</span>
-
-				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-					<i class="zmdi zmdi-close"></i>
-				</div>
-			</div>
-			
-			<div class="header-cart-content flex-w js-pscroll">
-				<ul class="header-cart-wrapitem w-full">
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-01.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $19.00
-							</span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-02.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Converse All Star
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $39.00
-							</span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-03.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Nixon Porter Leather
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $17.00
-							</span>
-						</div>
-					</li>
-				</ul>
-				
-				<div class="w-full">
-					<div class="header-cart-total w-full p-tb-40">
-						Total: $75.00
+							<li>
+								<a href="shoping-cart.php">Cart</a>
+							</li> 
+						</ul>
 					</div>
 
-					<div class="header-cart-buttons flex-w w-full">
-						<a href="shoping-cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-							View Cart
-						</a>
-
-						<a href="shoping-cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-							Check Out
-						</a>
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m">	
+						<?php if (isset($_SESSION['username'])) : ?>
+						<p style="padding: 0 20px">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>						
+						<?php endif ?>
+						<p><a href="index.php?logout='1'" style="color: red; text-align: right; padding: 0 5px">Logout</a></p>					
 					</div>
-				</div>
-			</div>
+				</nav>
+			</div>	
 		</div>
-	</div>
-
-		
 
 	<!-- Slider -->
 	<section class="section-slide">
@@ -330,7 +250,7 @@ include('server.php');
 								
 							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									HOME OFFICE
+									OFFICE
 								</h2>
 							</div>
 								
@@ -542,13 +462,6 @@ include('server.php');
 								   <?php echo $row['price']; ?>
 								   Bath							
 								</span>							
-							</div>
-							
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-								</a>
 							</div>
 						</div>					
 					</div>
