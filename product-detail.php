@@ -88,10 +88,6 @@ include('getid.php');
 							<li>
 								<a href="shoping-cart.php">Cart</a>
 							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
-							</li>
 						</ul>
 					</div>	
 

@@ -95,10 +95,8 @@ if ($result->num_rows > 0) {
 							</li>
 
 							<li>
-								<a href="shoping-cart.php">Cart</a>
+								<a href="# ">Cart</a>
 							</li>
-
-							
 						</ul>
 					</div>	
 
@@ -185,11 +183,7 @@ if ($result->num_rows > 0) {
 				</li>
 
 				<li>
-					<a href="shoping-cart.php" >Features</a>
-				</li>
-
-				<li>
-					<a href="contact.php">Contact</a>
+					<a href="shoping-cartsuccess.php" >Features</a>
 				</li>
 			</ul>
 		</div>
@@ -253,21 +247,7 @@ if ($result->num_rows > 0) {
 								<!-- /// -->
 							
 								
-								<?php while ($row = $result->fetch_assoc()): ?>
-								<tr class="table_row">
 
-									<td class="column-1">
-										<div class="how-itemcart1">
-											<img src="<?php echo $row['imge'];?>" alt="IMG">
-										</div>
-									</td>
-									<td class="column-2"><?php echo $row['topic'];?></td>
-									<td class="column-3"><?php echo $row['price'];?></td>
-									<td class="column-4"><?php echo $row['quantity'];?></td>
-									<td class="column-5">$<?php echo $row['price'];?></td>
-									<!-- ราคารวม -->
-								</tr>
-								<?php endwhile; ?>
 							</table>
 						</div>
 
@@ -357,18 +337,14 @@ if ($result->num_rows > 0) {
 
     <div class="size-209 p-t-1">
         <span class="mtext-110 cl2">
-            <?php echo number_format($total, ); ?> BATH
+           -
         </span>
     </div>
 </div>
-
-
 						<a href="check_out.php" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04">
 							check out
 							
 						</a>
-						
-						
 					</div>
 				</div>
 			</div>
@@ -377,8 +353,9 @@ if ($result->num_rows > 0) {
 		
 	
 		
-<!-- Footer -->
-<footer class="bg3 p-t-75 p-b-32">
+
+	<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 p-b-50">
@@ -497,7 +474,6 @@ if ($result->num_rows > 0) {
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>
 	</div>
-
 
 
 
