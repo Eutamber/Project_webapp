@@ -119,3 +119,8 @@ p {
 .container a:hover {
     opacity: 0.8; /* Reduce opacity on hover (you can adjust the value) */
 }
+
+body {
+    display: flex;
+    justify-content: center;
+}
