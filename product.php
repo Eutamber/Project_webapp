@@ -1,12 +1,5 @@
 <?php 
-    
-    $connect = new mysqli('localhost', 'root', '', 'database_webapp');
-
-    if ($connect->connect_error) {
-        die("Something wrong.: " . $connect->connect_error);
-      }
-	  
-
+include('server.php');
     $sql1 = "SELECT * FROM product_webapp";
 	$sql2 = "SELECT * FROM `product_webapp` WHERE topic LIKE '%ชุดโต๊ะอาหาร%' ";
 	$sql3 = "SELECT * FROM `product_webapp` WHERE types LIKE 'Home Decoration'";

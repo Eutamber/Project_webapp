@@ -1,19 +1,7 @@
 <?php 
-$connect = new mysqli('localhost', 'root', '', 'database_webapp');
-
-if ($connect->connect_error) {
-    die("Something wrong: " . $connect->connect_error);
-}
-
-$id = "";
-if(isset($_GET["id"])){
-    $id = $_GET["id"];
-}
-
-$sql = "SELECT * FROM product_webapp WHERE id = $id";
-$result = $connect->query($sql);
-
-
+session_start();
+include('server.php');
+include('getid.php');
 ?>
 
 <!DOCTYPE html>
@@ -270,8 +258,9 @@ $result = $connect->query($sql);
 		
 	
 	<!-- Product Detail -->
+	<from action="insetbasket.php" method="post">
 	<section class="sec-product-detail bg0 p-t-65 p-b-60">
-	<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+	
 	<?php while($row = $result->fetch_assoc()): ?>		
 		<div class="container">		
 			<div class="row">
@@ -309,6 +298,7 @@ $result = $connect->query($sql);
 						<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
 									<div class="wrap-num-product flex-w m-r-20 m-tb-10">
+									
 										<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
 											<i class="fs-16 zmdi zmdi-minus"></i>
 										</div>
@@ -320,15 +310,16 @@ $result = $connect->query($sql);
 										</div>
 									</div>
 
-									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+									<a href="product-detail.php?id=<?php echo $row['id'];?>" type="submit" name="reg_user" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
 										Add to cart
-									</button>
+									</a>
+									
 								</div>
 							</div>	
 					</div>
 				</div>
 			</div>
-
+			
 			<div class="bor10 m-t-50 p-t-43 p-b-40">
 				<!-- Tab01 -->
 				<div class="tab01">
@@ -354,8 +345,8 @@ $result = $connect->query($sql);
 			</div>			
 		</div>
 		<?php endwhile ?>
-	</form>		
 	</section>
+	</from>
 		
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
@@ -466,30 +457,6 @@ $result = $connect->query($sql);
 						</div>
 					</form>
 				</div>
-			</div>
-
-			<div class="p-t-40">
-				<!-- <div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
-					</a>
-				</div> -->
 			</div>
 		</div>
 	</footer>
